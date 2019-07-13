@@ -43,7 +43,7 @@ def LC20(X):
                 del jug[-1]
             else:
                 jug.append(i)
-    return(len(jug)== 0)
+    return(len(jug) == 0)
 
 LC20("{}][")
 
