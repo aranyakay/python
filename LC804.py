@@ -11,9 +11,8 @@ class Solution:
             out.append("".join(X))
         return len(set(out))
 
-    
-    #a faster solution
-    class Solution:
+#a faster solution
+class Solution:
     def uniqueMorseRepresentations(self, words):
         mosi = [".-","-...","-.-.","-..",".","..-.",
                 "--.","....","..",".---","-.-",".-..",
@@ -31,4 +30,14 @@ class Solution:
             X = [dic.get(n, n) for n in X]
             out.append("".join(X))
         return len(set(out))
+    
         
+
+#another slow solution
+class Solution:
+    def uniqueMorseRepresentations(self, words):
+        out = []
+        for text in words:
+            text = text.replace("a", ".-").replace("b", "-...").replace("c" , "-.-.").replace("d", "-..").replace("e", ".").replace("f", "..-.").replace("g", "--.").replace( "h", "....").replace("i", "..").replace("j", ".---").replace("k", "-.-").replace( "l", ".-..").replace("m", "--").replace( "n", "-.").replace("o", "---").replace( "p", ".--.").replace( "q", "--.-").replace("r", ".-.").replace("s", "...").replace("t", "-").replace("u", "..-").replace("v", "...-").replace("w", ".--").replace( "x", "-..-").replace("y", "-.--").replace("z", "--..")
+            out.append(text)
+        return len(set(out))
