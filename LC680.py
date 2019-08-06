@@ -41,6 +41,18 @@ def validPalindrome(s):
 #modify more
 #loop might cost too much
 #shrink loop, double check methods from start and end
-
+class Solution:
+    def validPalindrome(self, s):
+        result = False
+        if s == s[::-1]:
+            result = True
+        for i in range(len(s)):
+            start = s[0:i]
+            end = s[len(s)-i:]
+            if start == end[::-1] and len(start) != len(end):
+                mid = s[i+1:len(s)-i-1]
+                if mid == mid[::-1]:
+                    result = True
+        return(result)
 
 
