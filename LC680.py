@@ -26,4 +26,21 @@ def validPalindrome(s):
 
 
 #modify and improve 
+#and this one also out of time limit
+def validPalindrome(s):
+    result = False
+    if s == s[::-1]:
+        result = True
+    for i in range(len(s)):
+        S = s[0:i] + s[i+1:]
+        if S == S[::-1]:
+            result = True
+    return(result)
+
+
+#modify more
+#loop might cost too much
+#shrink loop, double check methods from start and end
+
+
 
