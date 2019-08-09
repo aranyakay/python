@@ -45,12 +45,21 @@ class Solution:
     def validPalindrome(self, s):
         result = False
         if s == s[::-1]:
-            result = True
+            return(True)
         for i in range(len(s)):
-            start = s[0:i]
-            end = s[len(s)-i:]
-            if start == end[::-1] and len(start) != len(end):
-                mid = s[i+1:len(s)-i-1]
+            if i == 0:
+                S = s[1:]
+                if S == S[::-1]:
+                    return(True)
+            if i == len(s):
+                S = s[:i-1]
+                if S == S[::-1]:
+                    return(True)
+            cut = min(i+1, int(len(S)/2))
+            start = s[0:cut]
+            end = s[len(s)-cut:]
+            if start == end[::-1] and i != len(s)/2 +0.5:
+                mid = s[cut+1:len(s)-cut-1]
                 if mid == mid[::-1]:
                     result = True
         return(result)
