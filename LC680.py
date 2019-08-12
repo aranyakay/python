@@ -65,3 +65,30 @@ class Solution:
         return(result)
 
 
+#something so fast
+
+class Solution:
+    def validPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        n=len(s)
+        left=0
+        right=n-1
+        while left<right:
+            if s[left]!=s[right]:
+                return self.comp(s,left+1,right) or self.comp(s,left,right-1)
+            left+=1
+            right-=1
+        return True
+        
+        
+    def comp(self,s,left,right):
+        while left<right:
+            if s[left]!=s[right]:
+                return False
+            left+=1
+            right-=1
+
+            
